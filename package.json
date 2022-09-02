@@ -2,12 +2,13 @@
   "name": "govpay-govnotify",
   "version": "1.0.0",
   "dependencies": {
-    "http-server": "^14.1.1"
+    "express": "^4.18.1",
+    "notifications-node-client": "^5.1.1"
   },
   "engines": {
     "node": "16.17.x"
   },
   "scripts": {
-    "start": "http-server"
+    "start": "node index.js"
   }
 }
