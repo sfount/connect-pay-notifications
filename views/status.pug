@@ -1,0 +1,38 @@
+mixin status(isValid)
+  td
+    if isValid
+      span.valid &#9745;
+    else
+      span.invalid &#9746;
+html
+  head
+    title Connect GOV.UK Pay and GOV.UK Notify
+    style
+      include style.css
+  body
+    h1 Connect GOV.UK Pay and GOV.UK Notify
+    if verifiedNotifyTemplateIDExists
+      p You're all set up, your webhook URL is:
+      p
+        pre
+          code https://#{host}/
+    
+    else
+      p Some configuration is missing. [link to sorting configuration]
+    table
+      tbody
+        tr
+          td Found Notify API key
+          +status(foundNotifyApiKey)
+        tr
+          td Found Notify template ID
+          +status(foundNotifyTemplateKey)
+        tr
+          td Found target email address
+          +status(foundTargetEmailAddress)
+        tr
+          td Connected to Notify
+          +status(connectedToNotify)
+        tr
+          td Verified Notify template ID exists
+          +status(verifiedNotifyTemplateIDExists)

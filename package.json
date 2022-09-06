@@ -1,14 +1,15 @@
 {
-  "name": "govpay-govnotify",
+  "name": "connect-pay-notify",
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.18.1",
-    "notifications-node-client": "^5.1.1"
+    "notifications-node-client": "^5.1.1",
+    "pug": "^3.0.2"
   },
   "engines": {
     "node": "16.17.x"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   }
 }

@@ -1,0 +1,19 @@
+{
+  "name": "Connect GOV.UK Pay and GOV.UK Notify",
+  "description": "Simple webhook handler to connect GOV.UK Pay and GOV.UK Notify",
+  "repository": "https://github.com/sfount/connect-pay-notifications",
+  "logo": "https://www.payments.service.gov.uk/assets/images/favicon.ico",
+  "website": "http://payments.service.gov.uk",
+  "success_url": "/",
+  "env": {
+    "NOTIFY_API_KEY": {
+            "description": "Your Notify API key. For example my_test_key-26785a09-ab16-4eb0-8407-a37497a57506-3d844edf-8d35-48ac-975b-e847b4f122b0."
+    },
+    "NOTIFY_TEMPLATE_ID": {
+            "description": "The template ID for the email to send. For example f33517ff-2a88-4f6e-b855-c550268ce08a."
+    },
+    "NOTIFY_EMAIL_ADDRESS": {
+            "description": "The address to send emails to when payment events happen."
+    }
+  }
+}
