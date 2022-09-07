@@ -40,8 +40,8 @@ app.get('/', async (req, res, next) => {
 
 app.post('/', async (req, res, next) => {
   try {
+    console.log(req.body)
     const response = await notifications.handle(req.body)
-    console.log('got response', response)
     if (response && response.data && response.data.id) {
       res.status(200).send()
     } else {

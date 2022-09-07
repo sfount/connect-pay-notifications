@@ -1,7 +1,7 @@
 # Connect GOV.UK Pay and GOV.UK Notify
 
 > **Warning**
-> This is an experimental integration and should not be used for live data
+> <br />This is an experimental integration and should not be used for live data
 
 Use GOV.UK Pay webhooks to send emails for payment events to a provided email address.
 
@@ -40,13 +40,19 @@ You can deploy to Heroku using the button below, you will be asked to enter:
 * The Notify template ID for the email you would like to be sent
 * The email address which should receive emails when payments are made
 
-Once you have provided this information and deployed your app, click `View` to check the status of your integration. You can then [set up your webhook](#setting-up-your-webhook)
+|   | Deployment steps |
+| ------------- | ------------- |
+| | With a Heroku account, you can deploy this integration to Heroku.<br /><br /> [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sfount/connect-pay-notifications) |
+|  ![dashboard heroku com_new_button-url=https%3A%2F%2Fsfount github io%2F template=https%3A%2F%2Fgithub com%2Fsfount%2Fconnect-pay-notifications (1)](https://user-images.githubusercontent.com/2844572/188918410-973b00fc-fdbf-4733-8677-bf00802693e3.png) | Enter the Notify configuration for your integration |
+| ![dashboard heroku com_new_button-url=https%3A%2F%2Fsfount github io%2F template=https%3A%2F%2Fgithub com%2Fsfount%2Fconnect-pay-notifications (2)](https://user-images.githubusercontent.com/2844572/188919162-84f3b412-532c-4f11-9296-20beeaf639b4.png) | Deploy your integration  |
+| ![dashboard heroku com_new_button-url=https%3A%2F%2Fsfount github io%2F template=https%3A%2F%2Fgithub com%2Fsfount%2Fconnect-pay-notifications (4)](https://user-images.githubusercontent.com/2844572/188919559-8b7458ac-2c59-4453-98b5-ed79a7df4db4.png) | Once complete, open the deployed app  
+ |  ![quiet-eyrie-84605 herokuapp com_](https://user-images.githubusercontent.com/2844572/188919970-33ed340d-5a14-4e0d-951a-314b1898ea2e.png) | You can now use the URL of this deployed app to receive webhooks from GOV.UK Pay |
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sfount/connect-pay-notifications)
+You can now [set up your webhook](#setting-up-your-webhook) with your integration URL.
 
 ## Setting up your webhook
 
 With the URL of your integration , follow the steps to [create a webhook](https://docs.payments.service.gov.uk/webhooks/#create-a-webhook) with GOV.UK Pay.
 
 > **Note**
-> Make sure to select the "Payment succeeded" event for the integration to send email when new payments are complete
+> <br />Make sure to select the "Payment succeeded" event for the integration to send email when new payments are complete
