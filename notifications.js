@@ -10,13 +10,20 @@ function handle(webhookMessage) {
   const eventType = webhookMessage.event_type || webhookMessage.event_type_name
 
   if (eventType === 'card_payment_succeeded') {
+
+    // notify expect all personalisation fields to be flat
+    const flatMetadata = Object.keys(resource.metadata).reduce((aggregate, key) => {
+      aggregate[`metadata.${key}`] = resource.metadata[key]
+      return aggregate
+    }, {})
     return notify.sendEmail(
       NOTIFY_TEMPLATE_ID,
       NOTIFY_EMAIL_ADDRESS,
       {
         personalisation: {
           reference: resource.reference || '',
-          cardholder_name: (resource.card_details && resource.card_details.cardholder_name) || ''
+          cardholder_name: (resource.card_details && resource.card_details.cardholder_name) || '',
+          ...flatMetadata
         },
         reference: resource.reference
       }
